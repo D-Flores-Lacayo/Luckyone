@@ -1,0 +1,871 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DCDE14E8-AD74-4555-A4FC-C19E8432ABCB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>LUCKYONE.My.MyApplication</StartupObject>
+    <RootNamespace>LUCKYONE</RootNamespace>
+    <AssemblyName>LUCKYONE</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>LUCKYONE.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>LUCKYONE.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\CrystalDecisions.CrystalReports.Engine\13.0.2000.0__692fbea5521e1304\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\CrystalDecisions.ReportSource\13.0.2000.0__692fbea5521e1304\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\CrystalDecisions.Shared\13.0.2000.0__692fbea5521e1304\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\CrystalDecisions.Windows.Forms\13.0.2000.0__692fbea5521e1304\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Design.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Images.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CONEXIONES\Cls_Sistema_ConSQL.vb" />
+    <Compile Include="CONEXIONES\consql.vb" />
+    <Compile Include="CONEXIONES\mod_Funciones.vb" />
+    <Compile Include="CONEXIONES\mod_Procedimientos.vb" />
+    <Compile Include="FORMS\CLASES\Cls_Cliente.vb" />
+    <Compile Include="FORMS\CLASES\Cls_Turnos.vb" />
+    <Compile Include="FORMS\CLASES\Cls_usuarios.vb" />
+    <Compile Include="FORMS\Frm_Cliente.Designer.vb">
+      <DependentUpon>Frm_Cliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Frm_Cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Frm_Turnos.Designer.vb">
+      <DependentUpon>Frm_Turnos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Frm_Turnos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Frm_Turno_Detalle.Designer.vb">
+      <DependentUpon>Frm_Turno_Detalle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Frm_Turno_Detalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Frm_Usuario.Designer.vb">
+      <DependentUpon>Frm_Usuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Frm_Usuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Form_uti_ExportarExcel.designer.vb">
+      <DependentUpon>Form_uti_ExportarExcel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Form_uti_ExportarExcel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\MDIParent1.Designer.vb">
+      <DependentUpon>MDIParent1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\MDIParent1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\MDI_PARENT.Designer.vb">
+      <DependentUpon>MDI_PARENT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\MDI_PARENT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FORMS\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FORMS\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Frm_Cliente.resx">
+      <DependentUpon>Frm_Cliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Frm_Turnos.resx">
+      <DependentUpon>Frm_Turnos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Frm_Turno_Detalle.resx">
+      <DependentUpon>Frm_Turno_Detalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Frm_Usuario.resx">
+      <DependentUpon>Frm_Usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Form_uti_ExportarExcel.resx">
+      <DependentUpon>Form_uti_ExportarExcel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\MDIParent1.resx">
+      <DependentUpon>MDIParent1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\MDI_PARENT.resx">
+      <DependentUpon>MDI_PARENT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RECURSOS\10_percent_off.png" />
+    <Content Include="RECURSOS\50_percent_off.png" />
+    <Content Include="RECURSOS\50_percent_off1.png" />
+    <Content Include="RECURSOS\accept.png" />
+    <Content Include="RECURSOS\accept1.png" />
+    <Content Include="RECURSOS\accept2.png" />
+    <Content Include="RECURSOS\accept_business_user.png" />
+    <Content Include="RECURSOS\add.png" />
+    <Content Include="RECURSOS\add1.png" />
+    <Content Include="RECURSOS\add2.png" />
+    <Content Include="RECURSOS\add3.png" />
+    <Content Include="RECURSOS\add4.png" />
+    <Content Include="RECURSOS\add_business_user.png" />
+    <Content Include="RECURSOS\add_male_user.png" />
+    <Content Include="RECURSOS\add_page.png" />
+    <Content Include="RECURSOS\add_pages.png" />
+    <Content Include="RECURSOS\add_to_shopping_cart.png" />
+    <Content Include="RECURSOS\attachment.png" />
+    <Content Include="RECURSOS\attach_image.png" />
+    <Content Include="RECURSOS\back.png" />
+    <Content Include="RECURSOS\back1.png" />
+    <Content Include="RECURSOS\BankCheck.png" />
+    <Content Include="RECURSOS\BankCheck1.png" />
+    <Content Include="RECURSOS\barcode.png" />
+    <Content Include="RECURSOS\barcode1.png" />
+    <Content Include="RECURSOS\beryl.png" />
+    <Content Include="RECURSOS\beryl1.png" />
+    <Content Include="RECURSOS\BILL01C.ICO" />
+    <Content Include="RECURSOS\block.png" />
+    <Content Include="RECURSOS\block1.png" />
+    <Content Include="RECURSOS\blue_arrow_down.png" />
+    <Content Include="RECURSOS\blue_arrow_up.png" />
+    <Content Include="RECURSOS\book.png" />
+    <Content Include="RECURSOS\book_accept.png" />
+    <Content Include="RECURSOS\book_accept1.png" />
+    <Content Include="RECURSOS\book_accept2.png" />
+    <Content Include="RECURSOS\book_download.png" />
+    <Content Include="RECURSOS\book_download1.png" />
+    <Content Include="RECURSOS\book_search.png" />
+    <Content Include="RECURSOS\book_search1.png" />
+    <Content Include="RECURSOS\book_search2.png" />
+    <Content Include="RECURSOS\book_search3.png" />
+    <Content Include="RECURSOS\book_warning.png" />
+    <Content Include="RECURSOS\book_warning1.png" />
+    <Content Include="RECURSOS\book_warning2.png" />
+    <Content Include="RECURSOS\businesswoman.png" />
+    <Content Include="RECURSOS\business_female_male_users.png" />
+    <Content Include="RECURSOS\business_female_male_users1.png" />
+    <Content Include="RECURSOS\business_female_male_users2.png" />
+    <Content Include="RECURSOS\business_female_male_users3.png" />
+    <Content Include="RECURSOS\business_female_male_users_comments.png" />
+    <Content Include="RECURSOS\business_male_female_users.png" />
+    <Content Include="RECURSOS\business_user.png" />
+    <Content Include="RECURSOS\business_user1.png" />
+    <Content Include="RECURSOS\business_users.png" />
+    <Content Include="RECURSOS\business_user_comment.png" />
+    <Content Include="RECURSOS\Caja.png" />
+    <Content Include="RECURSOS\Caja1.png" />
+    <Content Include="RECURSOS\calculator.png" />
+    <Content Include="RECURSOS\calculator1.png" />
+    <Content Include="RECURSOS\calculator2.png" />
+    <Content Include="RECURSOS\calendar.png" />
+    <Content Include="RECURSOS\calendar1.png" />
+    <Content Include="RECURSOS\calendar2.png" />
+    <Content Include="RECURSOS\calendar_empty.png" />
+    <Content Include="RECURSOS\calendar_empty1.png" />
+    <Content Include="RECURSOS\canvas_holder.png" />
+    <Content Include="RECURSOS\canvas_holder1.png" />
+    <Content Include="RECURSOS\Cartera1.png" />
+    <Content Include="RECURSOS\Cartera11.png" />
+    <Content Include="RECURSOS\Cash - Stack %28Add%29_24x24.png" />
+    <Content Include="RECURSOS\Cash - Stack %28Share%29_16x16.png" />
+    <Content Include="RECURSOS\Cash - Stack %28Share%29_24x24.png" />
+    <Content Include="RECURSOS\cdr_file.png" />
+    <Content Include="RECURSOS\Cert 02.ico" />
+    <Content Include="RECURSOS\chalk_board.png" />
+    <Content Include="RECURSOS\chalk_board1.png" />
+    <Content Include="RECURSOS\chalk_board2.png" />
+    <Content Include="RECURSOS\chart.png" />
+    <Content Include="RECURSOS\chart1.png" />
+    <Content Include="RECURSOS\chart_down.png" />
+    <Content Include="RECURSOS\chart_pie.png" />
+    <Content Include="RECURSOS\chart_up.png" />
+    <Content Include="RECURSOS\chart_up1.png" />
+    <Content Include="RECURSOS\CHKME.png" />
+    <Content Include="RECURSOS\CHKMN.png" />
+    <Content Include="RECURSOS\clock.png" />
+    <Content Include="RECURSOS\clock1.png" />
+    <Content Include="RECURSOS\clock2.png" />
+    <Content Include="RECURSOS\clouds.png" />
+    <Content Include="RECURSOS\clouds1.png" />
+    <Content Include="RECURSOS\coffee_cup.png" />
+    <Content Include="RECURSOS\compras.png" />
+    <Content Include="RECURSOS\compras1.png" />
+    <Content Include="RECURSOS\compras2.png" />
+    <Content Include="RECURSOS\computer-2.png" />
+    <Content Include="RECURSOS\computer-3.png" />
+    <Content Include="RECURSOS\computer_accept.png" />
+    <Content Include="RECURSOS\computer_accept1.png" />
+    <Content Include="RECURSOS\computer_info.png" />
+    <Content Include="RECURSOS\computer_process.png" />
+    <Content Include="RECURSOS\computer_process1.png" />
+    <Content Include="RECURSOS\computer_warning.png" />
+    <Content Include="RECURSOS\copy_paste.png" />
+    <Content Include="RECURSOS\copy_paste1.png" />
+    <Content Include="RECURSOS\copy_paste2.png" />
+    <Content Include="RECURSOS\copy_paste3.png" />
+    <Content Include="RECURSOS\creditcardvisa.png" />
+    <Content Include="RECURSOS\cut.png" />
+    <Content Include="RECURSOS\cut1.png" />
+    <Content Include="RECURSOS\delete.png" />
+    <Content Include="RECURSOS\delete1.png" />
+    <Content Include="RECURSOS\delete2.png" />
+    <Content Include="RECURSOS\delete_image.png" />
+    <Content Include="RECURSOS\delete_page.png" />
+    <Content Include="RECURSOS\delete_page1.png" />
+    <Content Include="RECURSOS\document-export-3.png" />
+    <Content Include="RECURSOS\document-print-4.png" />
+    <Content Include="RECURSOS\Documentos.png" />
+    <Content Include="RECURSOS\doc_file.ico" />
+    <Content Include="RECURSOS\doc_file.png" />
+    <Content Include="RECURSOS\dollar_currency_sign.png" />
+    <Content Include="RECURSOS\dollar_currency_sign1.png" />
+    <Content Include="RECURSOS\dollar_currency_sign2.png" />
+    <Content Include="RECURSOS\download.png" />
+    <Content Include="RECURSOS\edit.png" />
+    <Content Include="RECURSOS\edit1.png" />
+    <Content Include="RECURSOS\education-science.png" />
+    <Content Include="RECURSOS\education-science1.png" />
+    <Content Include="RECURSOS\email.png" />
+    <Content Include="RECURSOS\eps_file.png" />
+    <Content Include="RECURSOS\equalizer.png" />
+    <Content Include="RECURSOS\equalizer1.png" />
+    <Content Include="RECURSOS\equalizer2.png" />
+    <Content Include="RECURSOS\euro_currency_sign.png" />
+    <Content Include="RECURSOS\event_accept.png" />
+    <Content Include="RECURSOS\excel.jpg" />
+    <Content Include="RECURSOS\excel1.jpg" />
+    <Content Include="RECURSOS\excel2.jpg" />
+    <Content Include="RECURSOS\excel24.png" />
+    <Content Include="RECURSOS\Excel3.jpg" />
+    <Content Include="RECURSOS\export.png" />
+    <Content Include="RECURSOS\favorite.png" />
+    <Content Include="RECURSOS\favorite1.png" />
+    <Content Include="RECURSOS\filter.png" />
+    <Content Include="RECURSOS\firewall.png" />
+    <Content Include="RECURSOS\globe.png" />
+    <Content Include="RECURSOS\globe_download.png" />
+    <Content Include="RECURSOS\globe_warning.png" />
+    <Content Include="RECURSOS\gnucash.png" />
+    <Content Include="RECURSOS\green_arrow_down.png" />
+    <Content Include="RECURSOS\green_arrow_down1.png" />
+    <Content Include="RECURSOS\green_arrow_up.png" />
+    <Content Include="RECURSOS\green_button.png" />
+    <Content Include="RECURSOS\green_button1.png" />
+    <Content Include="RECURSOS\Guardar.png" />
+    <Content Include="RECURSOS\help.png" />
+    <Content Include="RECURSOS\home.png" />
+    <Content Include="RECURSOS\home_accept.png" />
+    <Content Include="RECURSOS\identity-2.png" />
+    <Content Include="RECURSOS\id_card.png" />
+    <Content Include="RECURSOS\id_card1.png" />
+    <Content Include="RECURSOS\image.png" />
+    <Content Include="RECURSOS\image_accept.png" />
+    <Content Include="RECURSOS\info.png" />
+    <Content Include="RECURSOS\info1.png" />
+    <Content Include="RECURSOS\INICIO.png" />
+    <Content Include="RECURSOS\INICIO3.png" />
+    <Content Include="RECURSOS\INICIO4.jpg" />
+    <Content Include="RECURSOS\INICIO5.jpg" />
+    <Content Include="RECURSOS\insert_to_shopping_cart.png" />
+    <Content Include="RECURSOS\key.png" />
+    <Content Include="RECURSOS\key1.png" />
+    <Content Include="RECURSOS\Keys256.png" />
+    <Content Include="RECURSOS\kspread-4.png" />
+    <Content Include="RECURSOS\kspread-41.png" />
+    <Content Include="RECURSOS\labclin002.png" />
+    <Content Include="RECURSOS\link.png" />
+    <Content Include="RECURSOS\link1.png" />
+    <Content Include="RECURSOS\link2.png" />
+    <Content Include="RECURSOS\loading29.gif" />
+    <Content Include="RECURSOS\lock.png" />
+    <Content Include="RECURSOS\lock1.png" />
+    <Content Include="RECURSOS\lock2.png" />
+    <Content Include="RECURSOS\mail.png" />
+    <Content Include="RECURSOS\mailpeque.png" />
+    <Content Include="RECURSOS\mailtipo1.png" />
+    <Content Include="RECURSOS\mailtipo2.png" />
+    <Content Include="RECURSOS\mail_lock.png" />
+    <Content Include="RECURSOS\mail_receive.png" />
+    <Content Include="RECURSOS\mail_search.png" />
+    <Content Include="RECURSOS\mail_send.png" />
+    <Content Include="RECURSOS\male_female_users.png" />
+    <Content Include="RECURSOS\male_user_warning.png" />
+    <Content Include="RECURSOS\Menos.png" />
+    <Content Include="RECURSOS\MontaCargas.png" />
+    <Content Include="RECURSOS\next.png" />
+    <Content Include="RECURSOS\next1.png" />
+    <Content Include="RECURSOS\note.png" />
+    <Content Include="RECURSOS\note_accept.png" />
+    <Content Include="RECURSOS\note_accept1.png" />
+    <Content Include="RECURSOS\note_book.png" />
+    <Content Include="RECURSOS\note_book1.png" />
+    <Content Include="RECURSOS\note_book2.png" />
+    <Content Include="RECURSOS\office_folders.png" />
+    <Content Include="RECURSOS\office_folders1.png" />
+    <Content Include="RECURSOS\office_folders2.png" />
+    <Content Include="RECURSOS\old_clock.png" />
+    <Content Include="RECURSOS\open_folder_accept.png" />
+    <Content Include="RECURSOS\open_folder_accept1.png" />
+    <Content Include="RECURSOS\package-x-generic.png" />
+    <Content Include="RECURSOS\packagekit.png" />
+    <Content Include="RECURSOS\package_accept.png" />
+    <Content Include="RECURSOS\package_accept1.png" />
+    <Content Include="RECURSOS\package_warning.png" />
+    <Content Include="RECURSOS\page_down.png" />
+    <Content Include="RECURSOS\page_down1.png" />
+    <Content Include="RECURSOS\page_up.png" />
+    <Content Include="RECURSOS\palette.png" />
+    <Content Include="RECURSOS\pastel_colors.png" />
+    <Content Include="RECURSOS\pastel_colors1.png" />
+    <Content Include="RECURSOS\pdf.png" />
+    <Content Include="RECURSOS\phone_book.png" />
+    <Content Include="RECURSOS\phone_book_edit.png" />
+    <Content Include="RECURSOS\photo_camera_accept.png" />
+    <Content Include="RECURSOS\pin.png" />
+    <Content Include="RECURSOS\planilla_64.png" />
+    <Content Include="RECURSOS\play.png" />
+    <Content Include="RECURSOS\play1.png" />
+    <Content Include="RECURSOS\portfolio.png" />
+    <Content Include="RECURSOS\postcard.png" />
+    <Content Include="RECURSOS\postcard1.png" />
+    <Content Include="RECURSOS\preferences-desktop-personal-2.png" />
+    <Content Include="RECURSOS\preferences-desktop-personal-21.png" />
+    <Content Include="RECURSOS\printer.png" />
+    <Content Include="RECURSOS\printer1.png" />
+    <Content Include="RECURSOS\prize_winner.png" />
+    <Content Include="RECURSOS\process-stop-6.png" />
+    <Content Include="RECURSOS\process-stop-61.png" />
+    <Content Include="RECURSOS\process.png" />
+    <Content Include="RECURSOS\Projectbuilder-app-options_48-256.ico" />
+    <Content Include="RECURSOS\promotion.png" />
+    <Content Include="RECURSOS\promotion1.png" />
+    <Content Include="RECURSOS\promotion2.png" />
+    <Content Include="RECURSOS\protection.png" />
+    <Content Include="RECURSOS\puzzle.png" />
+    <Content Include="RECURSOS\puzzle1.png" />
+    <Content Include="RECURSOS\puzzle2.png" />
+    <Content Include="RECURSOS\recycle.png" />
+    <Content Include="RECURSOS\refresh.png" />
+    <Content Include="RECURSOS\refresh1.png" />
+    <Content Include="RECURSOS\refresh2.png" />
+    <Content Include="RECURSOS\remove_from_shopping_cart.png" />
+    <Content Include="RECURSOS\report.png" />
+    <Content Include="RECURSOS\Resumen.png" />
+    <Content Include="RECURSOS\ruler.png" />
+    <Content Include="RECURSOS\ruler_pencil.png" />
+    <Content Include="RECURSOS\sap.jpg" />
+    <Content Include="RECURSOS\save.ico" />
+    <Content Include="RECURSOS\save.png" />
+    <Content Include="RECURSOS\save1.png" />
+    <Content Include="RECURSOS\search.png" />
+    <Content Include="RECURSOS\search1.png" />
+    <Content Include="RECURSOS\search2.png" />
+    <Content Include="RECURSOS\search3.png" />
+    <Content Include="RECURSOS\search_computer.png" />
+    <Content Include="RECURSOS\security.png" />
+    <Content Include="RECURSOS\SecurityLock32.png" />
+    <Content Include="RECURSOS\SecurityUnlock32.png" />
+    <Content Include="RECURSOS\Service - eCheck_24x24.png" />
+    <Content Include="RECURSOS\shopping_cart.png" />
+    <Content Include="RECURSOS\shopping_cart1.png" />
+    <Content Include="RECURSOS\shopping_cart2.png" />
+    <Content Include="RECURSOS\shopping_cart_accept.png" />
+    <Content Include="RECURSOS\shopping_cart_accept1.png" />
+    <Content Include="RECURSOS\shuffle.png" />
+    <Content Include="RECURSOS\shuffle1.png" />
+    <Content Include="RECURSOS\sigma.png" />
+    <Content Include="RECURSOS\SpreadsheetNumbers32.png" />
+    <Content Include="RECURSOS\star_empty.png" />
+    <Content Include="RECURSOS\star_empty1.png" />
+    <Content Include="RECURSOS\star_half_full.png" />
+    <Content Include="RECURSOS\star_half_full1.png" />
+    <Content Include="RECURSOS\sterling_pound_currency_sign.png" />
+    <Content Include="RECURSOS\stop.png" />
+    <Content Include="RECURSOS\tag_blue.png" />
+    <Content Include="RECURSOS\tag_blue1.png" />
+    <Content Include="RECURSOS\tag_green.png" />
+    <Content Include="RECURSOS\telephone.png" />
+    <Content Include="RECURSOS\television.png" />
+    <Content Include="RECURSOS\toolbox.png" />
+    <Content Include="RECURSOS\tools.png" />
+    <Content Include="RECURSOS\tools1.png" />
+    <Content Include="RECURSOS\trash_can.png" />
+    <Content Include="RECURSOS\trash_can1.png" />
+    <Content Include="RECURSOS\trash_can2.png" />
+    <Content Include="RECURSOS\truck.png" />
+    <Content Include="RECURSOS\truck1.png" />
+    <Content Include="RECURSOS\truck2.png" />
+    <Content Include="RECURSOS\twitter.png" />
+    <Content Include="RECURSOS\unlock.png" />
+    <Content Include="RECURSOS\unlock1.png" />
+    <Content Include="RECURSOS\unlock2.png" />
+    <Content Include="RECURSOS\Untitled %2893%29.ico" />
+    <Content Include="RECURSOS\up.png" />
+    <Content Include="RECURSOS\user.png" />
+    <Content Include="RECURSOS\Vendedores.png" />
+    <Content Include="RECURSOS\Venta.png" />
+    <Content Include="RECURSOS\view-calendar-list.png" />
+    <Content Include="RECURSOS\warning.png" />
+    <Content Include="RECURSOS\warning1.png" />
+    <Content Include="RECURSOS\warning2.png" />
+    <Content Include="RECURSOS\window-new-2.png" />
+    <Content Include="RECURSOS\xls_file.png" />
+    <Content Include="RECURSOS\yellow_mail.png" />
+    <Content Include="RECURSOS\yellow_mail1.png" />
+    <Content Include="RECURSOS\yellow_mail_receive.png" />
+    <Content Include="RECURSOS\yellow_mail_receive1.png" />
+    <Content Include="RECURSOS\yellow_mail_send.png" />
+    <Content Include="RECURSOS\yellow_mail_send1.png" />
+    <Content Include="RECURSOS\yellow_mail_send2.png" />
+    <Content Include="RECURSOS\yen_currency_sign.png" />
+    <Content Include="RECURSOS\zoom_in.png" />
+    <Content Include="RECURSOS\zoom_out.png" />
+    <None Include="Resources\zoom_out.png" />
+    <None Include="Resources\zoom_in.png" />
+    <None Include="Resources\yen_currency_sign.png" />
+    <None Include="Resources\yellow_mail1.png" />
+    <None Include="Resources\yellow_mail_send2.png" />
+    <None Include="Resources\yellow_mail_send1.png" />
+    <None Include="Resources\yellow_mail_send.png" />
+    <None Include="Resources\yellow_mail_receive1.png" />
+    <None Include="Resources\yellow_mail_receive.png" />
+    <None Include="Resources\yellow_mail.png" />
+    <None Include="Resources\xls_file.png" />
+    <None Include="Resources\window-new-2.png" />
+    <None Include="Resources\warning2.png" />
+    <None Include="Resources\warning1.png" />
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\view-calendar-list.png" />
+    <None Include="Resources\Venta.png" />
+    <None Include="Resources\Vendedores.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\up.png" />
+    <None Include="Resources\unlock2.png" />
+    <None Include="Resources\unlock1.png" />
+    <None Include="Resources\unlock.png" />
+    <None Include="Resources\twitter.png" />
+    <None Include="Resources\truck2.png" />
+    <None Include="Resources\truck1.png" />
+    <None Include="Resources\truck.png" />
+    <None Include="Resources\trash_can2.png" />
+    <None Include="Resources\trash_can1.png" />
+    <None Include="Resources\trash_can.png" />
+    <None Include="Resources\tools1.png" />
+    <None Include="Resources\tools.png" />
+    <None Include="Resources\toolbox.png" />
+    <None Include="Resources\television.png" />
+    <None Include="Resources\telephone.png" />
+    <None Include="Resources\tag_green.png" />
+    <None Include="Resources\tag_blue1.png" />
+    <None Include="Resources\tag_blue.png" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\sterling_pound_currency_sign.png" />
+    <None Include="Resources\star_half_full1.png" />
+    <None Include="Resources\star_half_full.png" />
+    <None Include="Resources\star_empty1.png" />
+    <None Include="Resources\star_empty.png" />
+    <None Include="Resources\SpreadsheetNumbers32.png" />
+    <None Include="Resources\sigma.png" />
+    <None Include="Resources\shuffle1.png" />
+    <None Include="Resources\shuffle.png" />
+    <None Include="Resources\shopping_cart2.png" />
+    <None Include="Resources\shopping_cart1.png" />
+    <None Include="Resources\shopping_cart_accept1.png" />
+    <None Include="Resources\shopping_cart_accept.png" />
+    <None Include="Resources\shopping_cart.png" />
+    <None Include="Resources\Service - eCheck_24x24.png" />
+    <None Include="Resources\SecurityUnlock32.png" />
+    <None Include="Resources\SecurityLock32.png" />
+    <None Include="Resources\security.png" />
+    <None Include="Resources\search3.png" />
+    <None Include="Resources\search2.png" />
+    <None Include="Resources\search1.png" />
+    <None Include="Resources\search_computer.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\save1.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\sap.jpg" />
+    <None Include="Resources\ruler_pencil.png" />
+    <None Include="Resources\ruler.png" />
+    <None Include="Resources\Resumen.png" />
+    <None Include="Resources\report.png" />
+    <None Include="Resources\remove_from_shopping_cart.png" />
+    <None Include="Resources\refresh2.png" />
+    <None Include="Resources\refresh1.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\recycle.png" />
+    <None Include="Resources\puzzle2.png" />
+    <None Include="Resources\puzzle1.png" />
+    <None Include="Resources\puzzle.png" />
+    <None Include="Resources\protection.png" />
+    <None Include="Resources\promotion2.png" />
+    <None Include="Resources\promotion1.png" />
+    <None Include="Resources\promotion.png" />
+    <None Include="Resources\process-stop-61.png" />
+    <None Include="Resources\process-stop-6.png" />
+    <None Include="Resources\process.png" />
+    <None Include="Resources\prize_winner.png" />
+    <None Include="Resources\printer1.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\preferences-desktop-personal-21.png" />
+    <None Include="Resources\preferences-desktop-personal-2.png" />
+    <None Include="Resources\postcard1.png" />
+    <None Include="Resources\postcard.png" />
+    <None Include="Resources\portfolio.png" />
+    <None Include="Resources\play1.png" />
+    <None Include="Resources\play.png" />
+    <None Include="Resources\planilla_64.png" />
+    <None Include="Resources\pin.png" />
+    <None Include="Resources\photo_camera_accept.png" />
+    <None Include="Resources\phone_book_edit.png" />
+    <None Include="Resources\phone_book.png" />
+    <None Include="Resources\pdf.png" />
+    <None Include="Resources\pastel_colors1.png" />
+    <None Include="Resources\pastel_colors.png" />
+    <None Include="Resources\palette.png" />
+    <None Include="Resources\page_up.png" />
+    <None Include="Resources\page_down1.png" />
+    <None Include="Resources\page_down.png" />
+    <None Include="Resources\package-x-generic.png" />
+    <None Include="Resources\packagekit.png" />
+    <None Include="Resources\package_warning.png" />
+    <None Include="Resources\package_accept1.png" />
+    <None Include="Resources\package_accept.png" />
+    <None Include="Resources\open_folder_accept1.png" />
+    <None Include="Resources\open_folder_accept.png" />
+    <None Include="Resources\old_clock.png" />
+    <None Include="Resources\office_folders2.png" />
+    <None Include="Resources\office_folders1.png" />
+    <None Include="Resources\office_folders.png" />
+    <None Include="Resources\note_book2.png" />
+    <None Include="Resources\note_book1.png" />
+    <None Include="Resources\note_book.png" />
+    <None Include="Resources\note_accept1.png" />
+    <None Include="Resources\note_accept.png" />
+    <None Include="Resources\note.png" />
+    <None Include="Resources\next1.png" />
+    <None Include="Resources\next.png" />
+    <None Include="Resources\MontaCargas.png" />
+    <None Include="Resources\Menos.png" />
+    <None Include="Resources\male_user_warning.png" />
+    <None Include="Resources\male_female_users.png" />
+    <None Include="Resources\mailtipo2.png" />
+    <None Include="Resources\mailtipo1.png" />
+    <None Include="Resources\mailpeque.png" />
+    <None Include="Resources\mail_send.png" />
+    <None Include="Resources\mail_search.png" />
+    <None Include="Resources\mail_receive.png" />
+    <None Include="Resources\mail_lock.png" />
+    <None Include="Resources\mail.png" />
+    <None Include="Resources\lock2.png" />
+    <None Include="Resources\lock1.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\loading29.gif" />
+    <None Include="Resources\link2.png" />
+    <None Include="Resources\link1.png" />
+    <None Include="Resources\link.png" />
+    <None Include="Resources\labclin002.png" />
+    <None Include="Resources\kspread-41.png" />
+    <None Include="Resources\kspread-4.png" />
+    <None Include="Resources\Keys256.png" />
+    <None Include="Resources\key1.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\insert_to_shopping_cart.png" />
+    <None Include="Resources\INICIO5.jpg" />
+    <None Include="Resources\INICIO4.jpg" />
+    <None Include="Resources\INICIO3.png" />
+    <None Include="Resources\INICIO.png" />
+    <None Include="Resources\info1.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\image_accept.png" />
+    <None Include="Resources\image.png" />
+    <None Include="Resources\identity-2.png" />
+    <None Include="Resources\id_card1.png" />
+    <None Include="Resources\id_card.png" />
+    <None Include="Resources\home_accept.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\Guardar.png" />
+    <None Include="Resources\green_button1.png" />
+    <None Include="Resources\green_button.png" />
+    <None Include="Resources\green_arrow_up.png" />
+    <None Include="Resources\green_arrow_down1.png" />
+    <None Include="Resources\green_arrow_down.png" />
+    <None Include="Resources\gnucash.png" />
+    <None Include="Resources\globe_warning.png" />
+    <None Include="Resources\globe_download.png" />
+    <None Include="Resources\globe.png" />
+    <None Include="Resources\firewall.png" />
+    <None Include="Resources\filter.png" />
+    <None Include="Resources\favorite1.png" />
+    <None Include="Resources\favorite.png" />
+    <None Include="Resources\export.png" />
+    <None Include="Resources\excel24.png" />
+    <None Include="Resources\Excel3.jpg" />
+    <None Include="Resources\excel2.jpg" />
+    <None Include="Resources\excel1.jpg" />
+    <None Include="Resources\excel.jpg" />
+    <None Include="Resources\event_accept.png" />
+    <None Include="Resources\euro_currency_sign.png" />
+    <None Include="Resources\equalizer2.png" />
+    <None Include="Resources\equalizer1.png" />
+    <None Include="Resources\equalizer.png" />
+    <None Include="Resources\eps_file.png" />
+    <None Include="Resources\email.png" />
+    <None Include="Resources\education-science1.png" />
+    <None Include="Resources\education-science.png" />
+    <None Include="Resources\edit1.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\dollar_currency_sign2.png" />
+    <None Include="Resources\dollar_currency_sign1.png" />
+    <None Include="Resources\dollar_currency_sign.png" />
+    <None Include="Resources\document-print-4.png" />
+    <None Include="Resources\Documentos.png" />
+    <None Include="Resources\document-export-3.png" />
+    <None Include="Resources\doc_file.png" />
+    <None Include="Resources\delete2.png" />
+    <None Include="Resources\delete1.png" />
+    <None Include="Resources\delete_page1.png" />
+    <None Include="Resources\delete_page.png" />
+    <None Include="Resources\delete_image.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\cut1.png" />
+    <None Include="Resources\cut.png" />
+    <None Include="Resources\creditcardvisa.png" />
+    <None Include="Resources\copy_paste3.png" />
+    <None Include="Resources\copy_paste2.png" />
+    <None Include="Resources\copy_paste1.png" />
+    <None Include="Resources\copy_paste.png" />
+    <None Include="Resources\computer-3.png" />
+    <None Include="Resources\computer-2.png" />
+    <None Include="Resources\computer_warning.png" />
+    <None Include="Resources\computer_process1.png" />
+    <None Include="Resources\computer_process.png" />
+    <None Include="Resources\computer_info.png" />
+    <None Include="Resources\computer_accept1.png" />
+    <None Include="Resources\computer_accept.png" />
+    <None Include="Resources\compras2.png" />
+    <None Include="Resources\compras1.png" />
+    <None Include="Resources\compras.png" />
+    <None Include="Resources\coffee_cup.png" />
+    <None Include="Resources\clouds1.png" />
+    <None Include="Resources\clouds.png" />
+    <None Include="Resources\clock2.png" />
+    <None Include="Resources\clock1.png" />
+    <None Include="Resources\clock.png" />
+    <None Include="Resources\CHKMN.png" />
+    <None Include="Resources\CHKME.png" />
+    <None Include="Resources\chart1.png" />
+    <None Include="Resources\chart_up1.png" />
+    <None Include="Resources\chart_up.png" />
+    <None Include="Resources\chart_pie.png" />
+    <None Include="Resources\chart_down.png" />
+    <None Include="Resources\chart.png" />
+    <None Include="Resources\chalk_board2.png" />
+    <None Include="Resources\chalk_board1.png" />
+    <None Include="Resources\chalk_board.png" />
+    <None Include="Resources\cdr_file.png" />
+    <None Include="Resources\Cash - Stack %28Share%29_24x24.png" />
+    <None Include="Resources\Cash - Stack %28Share%29_16x16.png" />
+    <None Include="Resources\Cash - Stack %28Add%29_24x24.png" />
+    <None Include="Resources\Cartera11.png" />
+    <None Include="Resources\Cartera1.png" />
+    <None Include="Resources\canvas_holder1.png" />
+    <None Include="Resources\canvas_holder.png" />
+    <None Include="Resources\calendar2.png" />
+    <None Include="Resources\calendar1.png" />
+    <None Include="Resources\calendar_empty1.png" />
+    <None Include="Resources\calendar_empty.png" />
+    <None Include="Resources\calendar.png" />
+    <None Include="Resources\calculator2.png" />
+    <None Include="Resources\calculator1.png" />
+    <None Include="Resources\calculator.png" />
+    <None Include="Resources\Caja1.png" />
+    <None Include="Resources\Caja.png" />
+    <None Include="Resources\businesswoman.png" />
+    <None Include="Resources\business_users.png" />
+    <None Include="Resources\business_user1.png" />
+    <None Include="Resources\business_user_comment.png" />
+    <None Include="Resources\business_user.png" />
+    <None Include="Resources\business_male_female_users.png" />
+    <None Include="Resources\business_female_male_users3.png" />
+    <None Include="Resources\business_female_male_users2.png" />
+    <None Include="Resources\business_female_male_users1.png" />
+    <None Include="Resources\business_female_male_users_comments.png" />
+    <None Include="Resources\business_female_male_users.png" />
+    <None Include="Resources\book_warning2.png" />
+    <None Include="Resources\book_warning1.png" />
+    <None Include="Resources\book_warning.png" />
+    <None Include="Resources\book_search3.png" />
+    <None Include="Resources\book_search2.png" />
+    <None Include="Resources\book_search1.png" />
+    <None Include="Resources\book_search.png" />
+    <None Include="Resources\book_download1.png" />
+    <None Include="Resources\book_download.png" />
+    <None Include="Resources\book_accept2.png" />
+    <None Include="Resources\book_accept1.png" />
+    <None Include="Resources\book_accept.png" />
+    <None Include="Resources\book.png" />
+    <None Include="Resources\blue_arrow_up.png" />
+    <None Include="Resources\blue_arrow_down.png" />
+    <None Include="Resources\block1.png" />
+    <None Include="Resources\block.png" />
+    <None Include="Resources\beryl1.png" />
+    <None Include="Resources\beryl.png" />
+    <None Include="Resources\barcode1.png" />
+    <None Include="Resources\barcode.png" />
+    <None Include="Resources\BankCheck1.png" />
+    <None Include="Resources\BankCheck.png" />
+    <None Include="Resources\back1.png" />
+    <None Include="Resources\back.png" />
+    <None Include="Resources\attachment.png" />
+    <None Include="Resources\attach_image.png" />
+    <None Include="Resources\add4.png" />
+    <None Include="Resources\add3.png" />
+    <None Include="Resources\add2.png" />
+    <None Include="Resources\add1.png" />
+    <None Include="Resources\add_to_shopping_cart.png" />
+    <None Include="Resources\add_pages.png" />
+    <None Include="Resources\add_page.png" />
+    <None Include="Resources\add_male_user.png" />
+    <None Include="Resources\add_business_user.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\accept2.png" />
+    <None Include="Resources\accept1.png" />
+    <None Include="Resources\accept_business_user.png" />
+    <None Include="Resources\accept.png" />
+    <None Include="Resources\50_percent_off1.png" />
+    <None Include="Resources\50_percent_off.png" />
+    <None Include="Resources\10_percent_off.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
