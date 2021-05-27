@@ -481,7 +481,7 @@ Partial Class FRM_USUARIOS
         Me.Controls.Add(Me.barDockControlTop)
         Me.Name = "FRM_USUARIOS"
         Me.RightToLeftLayout = True
-        Me.Text = "REGISTRO DE USUAIROS"
+        Me.Text = "REGISTRO DE USUARIOS"
         CType(Me.IDM, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IDUSUARIO.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.USUARIO.Properties, System.ComponentModel.ISupportInitialize).EndInit()

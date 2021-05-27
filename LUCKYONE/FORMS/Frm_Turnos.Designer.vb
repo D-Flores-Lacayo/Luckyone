@@ -383,7 +383,7 @@ Partial Class Frm_Turnos
         Me.ChkActivo.Location = New System.Drawing.Point(168, 16)
         Me.ChkActivo.Name = "ChkActivo"
         Me.ChkActivo.Size = New System.Drawing.Size(71, 21)
-        Me.ChkActivo.TabIndex = 15
+        Me.ChkActivo.TabIndex = 17
         Me.ChkActivo.Text = "ACTIVO"
         Me.ChkActivo.UseVisualStyleBackColor = True
         '
@@ -426,7 +426,7 @@ Partial Class Frm_Turnos
         Me.DtFecha.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "FECHA", -1, True, True, True, EditorButtonImageOptions4, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject13, SerializableAppearanceObject14, SerializableAppearanceObject15, SerializableAppearanceObject16, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
         Me.DtFecha.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.DtFecha.Size = New System.Drawing.Size(227, 24)
-        Me.DtFecha.TabIndex = 12
+        Me.DtFecha.TabIndex = 15
         '
         'PRECIO_GENERAL
         '

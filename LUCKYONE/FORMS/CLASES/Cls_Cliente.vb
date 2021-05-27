@@ -58,6 +58,38 @@
 
 
     End Function
+    Public Function UBICAR(ByVal CLIENTE As Integer) As Boolean
+        Try
+
+            Using TMPDS As DataSet = New DataSet
+                Dim STRSQL = String.Format("EXEC RECUPERAR_CLIENTE @CLIENTE = {0}", CLIENTE)
+
+                consql.consql.LlenarDataSet2(STRSQL, TMPDS)
+                If TieneDatos(TMPDS) Then
+                    For Each ROW As DataRow In TMPDS.Tables(0).Rows
+                        Me.ID_CLIENTE = ROW("ID_CLIENTE")
+
+                        Me.NOMBRES = ROW("NOMBRES")
+
+                        Me.APELLIDOS = ROW("APELLIDOS")
+
+                        Me.PRECIO_BASE = ROW("PRECIO_BASE")
+                    Next
+                Else
+                    Return False
+                End If
+
+
+            End Using
+            Return True
+
+
+
+        Catch ex As Exception
+            ErrorMsg(ex.Message)
+            Return False
+        End Try
+    End Function
 
 #Region "IDisposable Support"
     Private disposedValue As Boolean ' Para detectar llamadas redundantes

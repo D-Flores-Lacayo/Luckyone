@@ -1513,6 +1513,26 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property generic_user_purple() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("generic-user-purple", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property generic_user_purple1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("generic-user-purple1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property globe() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("globe", resourceCulture)
@@ -2796,6 +2816,16 @@ Namespace My.Resources
         Friend ReadOnly Property sigma() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("sigma", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property soft_cloudy_is_gradient_pastel_abstract_sky_background_sweet_color_6529_628() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("soft-cloudy-is-gradient-pastel-abstract-sky-background-sweet-color_6529-628", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

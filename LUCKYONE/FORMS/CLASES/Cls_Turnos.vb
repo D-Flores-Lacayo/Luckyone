@@ -21,8 +21,8 @@
     Public Sub NUEVO()
         Try
             Me.ID_USUARIO = 0
-            Me.ID_TICKET = ""
-            Me.ID_TURNO = ""
+            Me.ID_TICKET = 0
+            Me.ID_TURNO = 0
             Me.FECHA = Today
             Me.PRECIO_GENERAL = 0
             Me.PRECIO_CASA = 0

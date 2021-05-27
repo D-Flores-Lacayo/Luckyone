@@ -79,4 +79,28 @@
 
         End Try
     End Sub
+
+    Private Sub GRV_DoubleClick(sender As Object, e As EventArgs) Handles GRV.DoubleClick
+        Try
+
+            Dim ROW As DataRow = Me.GRV.GetDataRow(Me.GRV.FocusedRowHandle)
+            If Not IsNothing(ROW) Then
+                If OBJCLIENTE.UBICAR(ROW("ID_CLIENTE")) = True Then
+
+                    Me.IDCLIENTE.Text = OBJCLIENTE.ID_CLIENTE
+                    Me.NOMBRES.Text = OBJCLIENTE.NOMBRES
+                    Me.APELLIDOS.Text = OBJCLIENTE.APELLIDOS
+                    Me.PRECIO_BASE.Value = OBJCLIENTE.PRECIO_BASE
+                Else
+                    ErrorMsg("CLIENTE NO ENCONTRADO/CLIENTE NO EXISTE")
+
+                End If
+
+
+            End If
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

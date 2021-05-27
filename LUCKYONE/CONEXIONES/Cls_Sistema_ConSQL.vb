@@ -10,12 +10,122 @@ Public Class Cls_Sistema_ConSQL
     Private cmd As System.Data.SqlClient.SqlCommand
     Dim strconn As String = "data source = .; initial catalog = LUCKYONE; user id = SAS; password = ABC*123"
 
+#Region "Variables de Conexión proporcionadas por el Usuario"
+    Private _Usuario As String
+    Private _Contraseña As String
+    Private _ServidorSQL As String
+    Private _BaseDatos As String
+    Public Property Usuario() As String
+        Get
+            Usuario = Me._Usuario
+        End Get
+        Set(ByVal value As String)
+            Me._Usuario = value
+        End Set
+    End Property
+    ''' <summary>
+    ''' Contraseña del Login para conectarse al SQL Server
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Property Contraseña() As String
+        Get
+            Contraseña = Me._Contraseña
+        End Get
+        Set(ByVal value As String)
+            Me._Contraseña = value
+        End Set
+    End Property
+    ''' <summary>
+    ''' Nombre de la Base de datos a la cual se establecerá la conexión
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Property BaseDatos() As String
+        Get
+            BaseDatos = Me._BaseDatos
+        End Get
+        Set(ByVal value As String)
+            Me._BaseDatos = value
+        End Set
+    End Property
+    ''' <summary>
+    ''' Nombre del Servidor SQL o dirección IP
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Property ServidorSQL() As String
+        Get
+            ServidorSQL = Me._ServidorSQL
+        End Get
+        Set(ByVal value As String)
+            Me._ServidorSQL = value
+        End Set
+    End Property
 
+#End Region
 
 #Region "Métodos de la clase"
+    Public Function strSqlCNstring() As String
+        Try
+            Dim strSql As String
+            If IsNothing(Me.cn) Then
+                strSql = String.Format("Connection Timeout=30;Persist Security Info=False;Application Name={0} {1};Server={2};Database={3};Password={4};User ID={5}", Application.ProductName, My.Application.Info.Version.ToString, Me._ServidorSQL, Me._BaseDatos, Me._Contraseña, Me._Usuario)
+            Else
+                strSql = String.Format("Connection Timeout=30;Persist Security Info=False;Application Name={0} {1};Server={2};Database={3};Password={4};User ID={5}", Application.ProductName, My.Application.Info.Version.ToString, Me._ServidorSQL, Me._BaseDatos, Me._Contraseña, Me._Usuario)
+            End If
+            Return strSql
+        Catch ex As Exception
+            Return String.Empty
+        End Try
+    End Function
 
+    Public Function IniciarSesionSQL() As Boolean
+        Try
+            If Me.AbrirBD() = False Then
+                IniciarSesionSQL = False
+            Else
 
+                IniciarSesionSQL = True
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+    Public Function AbrirBD() As Boolean
+        Try
+            Dim strSql As String = CStr(Now())
+            Dim n As Integer = 0
+            If Not (Me.cn Is Nothing) Then Me.cn = Nothing
+            If Not (Me.cna Is Nothing) Then Me.cna = Nothing
+            If Not (Me.cmd Is Nothing) Then Me.cmd = Nothing
+            Me.cn = New System.Data.SqlClient.SqlConnection(Me.strSqlCNstring())
 
+            Me.cn.Open()
+            Me.cn.Close()
+            Me.cn.ConnectionString = Me.strSqlCNstring()
+            Me.cn.Open()
+            Me.cmd = New System.Data.SqlClient.SqlCommand(String.Format("SELECT COUNT(*) FROM USUARIO AS u"), Me.cn)
+            With Me.cmd
+                n = .ExecuteScalar()
+            End With
+            If Me.cn.State = ConnectionState.Open Then
+                If n > 0 Then
+                    AbrirBD = True
+                Else
+                    AbrirBD = False
+                End If
+            Else
+                AbrirBD = False
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            AbrirBD = False
+        End Try
+    End Function
     Public Function FullComboBox(ByVal strSql As String, ByRef cmb As DevExpress.XtraEditors.LookUpEdit, ByVal _strDisplayMember As String, ByVal _strValueMember As String) As Boolean
         Try
             Dim _ds As New DataSet
@@ -229,7 +339,7 @@ Public Class Cls_Sistema_ConSQL
                 Me.cn.Close()
             End If
             Me.cn = Nothing
-            Me.cn = New System.Data.SqlClient.SqlConnection(Me.strconn)
+            Me.cn = New System.Data.SqlClient.SqlConnection(strSqlCNstring)
             Me.cn.Open()
             Me.cmd = Nothing
             Me.cmd = New System.Data.SqlClient.SqlCommand()
@@ -346,7 +456,7 @@ Public Class Cls_Sistema_ConSQL
             If (tmpDs Is Nothing) Then tmpDs = New DataSet
             tmpDs.Clear()
 
-            Using Mytmp_cn As New System.Data.SqlClient.SqlConnection(Me.strconn)
+            Using Mytmp_cn As New System.Data.SqlClient.SqlConnection(Me.strSqlCNstring)
                 Mytmp_cn.Open()
                 Using Mytmp_cmd As New System.Data.SqlClient.SqlCommand(strSql, Mytmp_cn) With {.CommandTimeout = 600}
                     Using da As System.Data.SqlClient.SqlDataAdapter = New System.Data.SqlClient.SqlDataAdapter(Mytmp_cmd)
@@ -363,7 +473,7 @@ Public Class Cls_Sistema_ConSQL
             If (tbl Is Nothing) Then tbl = New DataTable
             tbl.Clear()
 
-            Using Mytmp_cn As New System.Data.SqlClient.SqlConnection(Me.strconn)
+            Using Mytmp_cn As New System.Data.SqlClient.SqlConnection(Me.strSqlCNstring)
                 Mytmp_cn.Open()
                 Using Mytmp_cmd As New System.Data.SqlClient.SqlCommand(strSql, Mytmp_cn) With {.CommandTimeout = 600}
                     Using da As System.Data.SqlClient.SqlDataAdapter = New System.Data.SqlClient.SqlDataAdapter(Mytmp_cmd)
@@ -378,7 +488,7 @@ Public Class Cls_Sistema_ConSQL
     Public Sub LlenarDataSet(ByVal strSql As String, ByRef ds As DataSet, ByVal i As String)
         Try
             Dim dtbl As DataTable = New DataTable(i)
-            Using Mytmp_cn As New System.Data.SqlClient.SqlConnection(Me.strconn)
+            Using Mytmp_cn As New System.Data.SqlClient.SqlConnection(Me.strSqlCNstring)
                 Mytmp_cn.Open()
                 ds.Tables.Add(i)
                 Using da As System.Data.SqlClient.SqlDataAdapter = New System.Data.SqlClient.SqlDataAdapter(strSql, Mytmp_cn)
@@ -485,7 +595,7 @@ Public Class Cls_Sistema_ConSQL
         Try
             Dim rs As New DataSet
 
-            Using Mytmp_cn As New System.Data.SqlClient.SqlConnection(Me.strconn)
+            Using Mytmp_cn As New System.Data.SqlClient.SqlConnection(Me.strSqlCNstring)
                 Mytmp_cn.Open()
                 Using Mytmp_cmd As New System.Data.SqlClient.SqlCommand(strSql, Mytmp_cn) With {.CommandTimeout = 600}
                     Using da As System.Data.SqlClient.SqlDataAdapter = New System.Data.SqlClient.SqlDataAdapter(Mytmp_cmd)
@@ -501,7 +611,7 @@ Public Class Cls_Sistema_ConSQL
     End Function
     Public Sub LlenarDataSet2(ByVal strSql As String, ByRef ds As DataSet)
         Try
-            Using Mytmp_cn As New System.Data.SqlClient.SqlConnection(Me.strconn)
+            Using Mytmp_cn As New System.Data.SqlClient.SqlConnection(Me.strSqlCNstring)
                 Mytmp_cn.Open()
                 Using Mytmp_cmd As New System.Data.SqlClient.SqlCommand(strSql, Mytmp_cn) With {.CommandTimeout = 600}
                     Using da As System.Data.SqlClient.SqlDataAdapter = New System.Data.SqlClient.SqlDataAdapter(Mytmp_cmd)
